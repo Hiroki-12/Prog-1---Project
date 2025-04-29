@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Athlete
+comment0.text=Class\ Athlete\:\r\n\ \ \ \ //Attributes\:\r\n\ \ \ \ \ \ \ //\ -\ name\:\ String\r\n\ \ \ \ \ \ \ //\ -\ age\:\ Integer\r\n\ \ \ \ \ \ \ //\ -\ gender\:\ Gender\r\n\ \ \ \ \ \ \ \ //-\ weight\:\ Integer\r\n\r\n\ \ \ //\ Methods\:\r\n\ \ \ \ \ \ \ //\ -\ Constructor(name,\ age,\ gender,\ weight)\r\n\ \ \ \ \ \ //\ \ -\ getName()\r\n\ \ \ \ \ \ \ \ //-\ getAge()\r\n\ \ \ \ \ \ \ //\ -\ getGender()\r\n\ \ \ \ \ \ \ \ //-\ getWeight()\r\n\ @author\ (Anthony)\r\n\r\n
+comment1.params=
+comment1.target=Athlete()
+comment2.params=y
+comment2.target=int\ sampleMethod(int)
+numComments=3
