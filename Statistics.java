@@ -1,4 +1,5 @@
-
+import java.util.List;
+import java.util.List;
 /**
  Class Statistics:
     Attributes:
@@ -22,16 +23,16 @@
  */
 public class Statistics
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    double distance;
+    double duration;
+    double  calories;
+    
     /**
      * Constructor for objects of class Statistics
      */
     public Statistics()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -40,9 +41,18 @@ public class Statistics
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public double calculateTotalDistance(List<Activity> activities)
     {
-        // put your code here
-        return x + y;
+        return distance;
+    }
+    
+    public double calculateDistanceByAthlete(List<Activity> Athlete)
+    {
+        return distance;
+    }
+    
+    public double calculateCaloriesByAthlete(List<Activity> Athlete)
+    {
+        return calories;
     }
 }

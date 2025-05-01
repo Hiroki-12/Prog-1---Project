@@ -14,16 +14,17 @@
  */
 public class Equipment
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    String equipmentName;
+    String model;
+    String type;
+    String brand;
 
     /**
      * Constructor for objects of class Equipment
      */
     public Equipment()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -32,9 +33,23 @@ public class Equipment
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public String getEquipmentName()
     {
-        // put your code here
-        return x + y;
+        return equipmentName;
+    }
+    
+    public String getModel()
+    {
+        return model;
+    }
+    
+    public String getType()
+    {
+        return type;
+    }
+    
+    public String getBrand()
+    {
+        return brand;
     }
 }

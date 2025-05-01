@@ -16,20 +16,40 @@
  */
 public class Athlete
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    String name;
+    int age;
+    Gender gender;
+    double height;
+    double weight;
 
   
     public Athlete()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
-    
-    public int sampleMethod(int y)
+    public String getName()
     {
-        // put your code here
-        return x + y;
+        return name;
+    }
+    
+    public int getAge()
+    {
+        return age;
+    }
+    
+    public Gender getGender()
+    {
+        return gender;
+    }
+    
+    public double getHeight()
+    {
+       return height; 
+    }
+    
+    public double getWeight()
+    {
+        return weight;
     }
 }
