@@ -22,7 +22,10 @@ public class Activity
      */
     public Activity()
     {
-        
+        this.date = date;
+        this.distance = distance;
+        this.modeOfTransportation = modeOfTransportation;
+        this.athlete = athlete;
     }
 
     /**
@@ -56,9 +59,9 @@ public class Activity
         System.out.println(toString());
     }
     
-    /*public String toString()
+    public String toString()
     {
-        
+        return "Activity: " + modeOfTransportation + ", Date: " + date + 
+        ", Distance: " + distance + " km" + ", Athlete: " + athlete.getName();
     }
-    */
 }
