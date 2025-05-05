@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 /**
  Class Activity:
@@ -11,16 +12,17 @@
  */
 public class Activity
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private LocalDate date;
+    private double distance;
+    private String modeOfTransportation;
+    private Athlete athlete;
 
     /**
      * Constructor for objects of class Activity
      */
     public Activity()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -29,9 +31,34 @@ public class Activity
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public LocalDate getDate()
     {
-        // put your code here
-        return x + y;
+        return date;
     }
+    
+    public double getDistance()
+    {
+        return distance;
+    }
+    
+    public String getModeOfTransportation()
+    {
+        return modeOfTransportation;
+    }
+    
+    public Athlete getAthlete()
+    {
+        return athlete;
+    }
+    
+    public void printActivityDetails()
+    {
+        
+    }
+    
+    /*public String toString()
+    {
+        
+    }
+    */
 }

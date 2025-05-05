@@ -23,7 +23,7 @@ public class Athlete
     double weight;
 
   
-    public Athlete()
+    public Athlete(String name, int age, Gender gender, double height, double weight)
     {
         
     }
