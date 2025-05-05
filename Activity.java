@@ -14,7 +14,7 @@ public class Activity
 {
     private LocalDate date;
     private double distance;
-    private String modeOfTransportation;
+    private ModeOfTransport modeOfTransportation;
     private Athlete athlete;
 
     /**
@@ -41,7 +41,7 @@ public class Activity
         return distance;
     }
     
-    public String getModeOfTransportation()
+    public ModeOfTransport getModeOfTransportation()
     {
         return modeOfTransportation;
     }
@@ -53,7 +53,7 @@ public class Activity
     
     public void printActivityDetails()
     {
-        
+        System.out.println(toString());
     }
     
     /*public String toString()

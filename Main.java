@@ -8,6 +8,7 @@ import java.util.List;
 public class Main
 {
     List<Activity> activities;
+    
     /**
      * Constructor for objects of class Main
      */
