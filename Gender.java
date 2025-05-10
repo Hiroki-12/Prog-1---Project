@@ -1,13 +1,8 @@
-
 /**
- Enum Gender:
-    - MALE
-    - FEMALE
-    - OTHER
-
- * @author (Anthony)
- */
-public enum Gender
-{
-    MALE, FEMALE, OTHER
+ * Represents the gender of an athlete.
+ */ //@Author Anthony
+public enum Gender {
+    MALE,
+    FEMALE,
+    OTHER
 }

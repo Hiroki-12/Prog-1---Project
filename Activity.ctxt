@@ -1,10 +1,28 @@
 #BlueJ class context
 comment0.target=Activity
-comment0.text=\r\n\ Class\ Activity\:\r\n\ \ \ \ Attributes\:\r\n\ \ \ \ \ \ \ \ -\ activities\:\ List\ of\ String\ \=\ [\ "walking",\ "running",\ "swimming",\ "biking",\ "soccer",\ "football",\ ...\ ]\r\n\r\n\ \ \ \ Methods\:\r\n\ \ \ \ \ \ \ \ -\ getActivities()\r\n\r\n\ @author\ (Anthony)\r\n
-comment1.params=
-comment1.target=Activity()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Activity\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-numComments=3
+comment0.text=\r\n\ Represents\ a\ general\ physical\ activity\ performed\ by\ an\ athlete.\r\n\ Examples\ include\ walking,\ running,\ or\ swimming.\r\n\ This\ class\ holds\ basic\ attributes\ such\ as\ date,\ distance,\ and\ mode.\r\n\ \r\n\ @author\ \r\n
+comment1.params=date\ distance\ modeOfTransportation\ athlete
+comment1.target=Activity(java.time.LocalDate,\ double,\ ModeOfTransport,\ Athlete)
+comment1.text=\r\n\ Constructor\ to\ initialize\ an\ Activity.\r\n\ \r\n\ @param\ date\ Date\ of\ the\ activity\r\n\ @param\ distance\ Distance\ traveled\ in\ kilometers\r\n\ @param\ modeOfTransportation\ The\ mode\ used\ (e.g.,\ walking,\ running)\r\n\ @param\ athlete\ The\ athlete\ who\ performed\ the\ activity\r\n
+comment10.params=
+comment10.target=double\ calculateCaloriesBurned()
+comment10.text=\r\n\ Estimates\ calories\ burned\ based\ on\ distance\ and\ a\ fixed\ multiplier.\r\n\ For\ example,\ assume\ 60\ calories/km\ for\ running.\r\n
+comment11.params=
+comment11.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=java.time.LocalDate\ getDate()
+comment3.params=
+comment3.target=double\ getDistance()
+comment4.params=
+comment4.target=ModeOfTransport\ getModeOfTransportation()
+comment5.params=
+comment5.target=Athlete\ getAthlete()
+comment6.params=date
+comment6.target=void\ setDate(java.time.LocalDate)
+comment7.params=distance
+comment7.target=void\ setDistance(double)
+comment8.params=mode
+comment8.target=void\ setModeOfTransportation(ModeOfTransport)
+comment9.params=athlete
+comment9.target=void\ setAthlete(Athlete)
+numComments=12

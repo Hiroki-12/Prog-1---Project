@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=PoweredActivity
+comment0.text=\r\n\ A\ powered\ activity\ is\ a\ physical\ activity\ that\ uses\ equipment,\r\n\ such\ as\ biking,\ e-biking,\ or\ rollerblading.\r\n\ Inherits\ from\ Activity\ and\ adds\ an\ Equipment\ field.\r\n
+comment1.params=date\ distance\ mode\ athlete\ equipment
+comment1.target=PoweredActivity(java.time.LocalDate,\ double,\ ModeOfTransport,\ Athlete,\ Equipment)
+comment1.text=\r\n\ Constructor\ for\ PoweredActivity\r\n\r\n\ @param\ date\ The\ date\ of\ the\ activity\r\n\ @param\ distance\ Distance\ in\ kilometers\r\n\ @param\ mode\ Mode\ of\ transportation\ (should\ be\ powered)\r\n\ @param\ athlete\ The\ athlete\ who\ performed\ the\ activity\r\n\ @param\ equipment\ The\ equipment\ used\r\n
+comment2.params=
+comment2.target=Equipment\ getEquipment()
+comment3.params=equipment
+comment3.target=void\ setEquipment(Equipment)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=
+comment5.target=double\ calculateCaloriesBurned()
+numComments=6
