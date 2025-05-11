@@ -1,4 +1,5 @@
 import java.util.List;
+import java.time.LocalDate;
 /**
  * Write a description of class Main here.
  *
@@ -7,15 +8,9 @@ import java.util.List;
  */
 public class Main
 {
-    List<Activity> activities;
-    
-    /**
-     * Constructor for objects of class Main
-     */
-    public Main()
-    {
-        
-    }
+    private List<Activity> activities;
+    private List <Athlete> athletes;
+    private List<Equipment> equipmentList;
 
     /**
      * An example of a method - replace this comment with your own

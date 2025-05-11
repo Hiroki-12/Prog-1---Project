@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.List;
 /**
  Class Statistics:
     Attributes:
@@ -28,31 +27,39 @@ public class Statistics
     double  calories;
     
     /**
-     * Constructor for objects of class Statistics
-     */
-    public Statistics()
-    {
-        
-    }
-
-    /**
      * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public double calculateTotalDistance(List<Activity> activities)
+    public static double calculateTotalDistance(List<Activity> activities)
     {
-        return distance;
+        double total = 0;
+        for (Activity a : activities) {
+            total += a.getDistance();
+        }
+        return total;
     }
     
-    public double calculateDistanceByAthlete(List<Activity> Athlete)
+    public static double calculateDistanceByAthlete(List<Activity> activities, Athlete athlete)
     {
-        return distance;
+        double total = 0;
+        for (Activity a: activities){
+            if(a.getAthlete().equals(athlete)) {
+                total += a.getDistance();
+            }
+        }
+        return total;
     }
     
-    public double calculateCaloriesByAthlete(List<Activity> Athlete)
+    public static double calculateCaloriesByAthlete(List<Activity> activities, Athlete athlete)
     {
-        return calories;
+        double total = 0;
+        for (Activity a:activities) {
+            if (a.getAthlete().equals(athlete)) {
+                total += a.calculateCaloriesBurned();
+            }
+        }
+        return total;
     }
 }
