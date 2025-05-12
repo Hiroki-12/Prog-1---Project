@@ -1,24 +1,26 @@
+import java.util.ArrayList;
+
 /**
  * Represents an athlete who performs activities.
- * Stores personal data including name, age, gender, height, and weight.
+ * Stores personal data including name, YOB, gender, height, and weight.
  * 
  */
 public class Athlete {
     private String name;
-    private int age;
+    private int YOB;
     private Gender gender;
-    private double height; // in cm
     private double weight; // in kg
+    private ArrayList<Activity> activities;
 
     /**
      * Constructs an Athlete with all attributes.
      */
-    public Athlete(String name, int age, Gender gender, double height, double weight) {
+    public Athlete(String name, int YOB, Gender gender, double weight) {
         this.name = name;
-        this.age = age;
+        this.YOB = YOB;
         this.gender = gender;
-        this.height = height;
         this.weight = weight;
+        this.activities = new ArrayList<>();
     }
 
     // Getters
@@ -26,52 +28,55 @@ public class Athlete {
         return name;
     }
 
-    public int getAge() {
-        return age;
+    public int getYOB() {
+        return YOB;
     }
 
     public Gender getGender() {
         return gender;
     }
 
-    public double getHeight() {
-        return height;
-    }
-
     public double getWeight() {
         return weight;
     }
+    
+    public ArrayList<Activity> getActivities()
+    {
+        return activities;
+    }
 
     // Setters
-    public void setName(String name) {
-        this.name = name;
+    public void addActivity(Activity activity)
+    {
+        activities.add(activity);
     }
-
-    public void setAge(int age) {
-        this.age = age;
+    
+    public double getTotalDistance()
+    {
+        double total = 0;
+        for (Activity a : activities)
+        {
+            total += a.getDistance();
+        }
+        return total;
     }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    
+    public double getTotalCaloriesBurned() {
+        double total = 0;
+        for (Activity a : activities) {
+            total += a.getCaloriesBurned();
+        }
+        return total;
     }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
+    
     @Override
     public String toString() {
-        return "Athlete{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                ", height=" + height + " cm" +
-                ", weight=" + weight + " kg" +
-                '}';
+        return "Athlete(" +
+                "Name = " + name + '\'' +
+                ", YOB = " + YOB + "yrs" +
+                ", Gender = " + gender +
+                ", Weight = " + weight + "kg" +
+                ")";
     }
 
     @Override
@@ -79,6 +84,6 @@ public class Athlete {
         if (this == obj) return true;
         if (!(obj instanceof Athlete)) return false;
         Athlete other = (Athlete) obj;
-        return name.equals(other.name) && age == other.age;
+        return name.equals(other.name) && YOB == other.YOB;
     }
 }

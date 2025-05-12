@@ -1,4 +1,6 @@
 import java.util.List;
+import java.util.ArrayList;
+
 /**
  Class Statistics:
     Attributes:
@@ -22,9 +24,21 @@ import java.util.List;
  */
 public class Statistics
 {
-    double distance;
-    double duration;
-    double  calories;
+    public static double totalDistance(ArrayList<Activity> activities) {
+        return activities.stream().mapToDouble(Activity::getDistance).sum();
+    }
+
+    public static double totalCalories(ArrayList<Activity> activities) {
+        return activities.stream().mapToDouble(Activity::getCaloriesBurned).sum();
+    }
+
+    public static double distanceByAthlete(Athlete athlete) {
+        return athlete.getTotalDistance();
+    }
+
+    public static double caloriesByAthlete(Athlete athlete) {
+        return athlete.getTotalCaloriesBurned();
+    }
     
     /**
      * An example of a method - replace this comment with your own
@@ -57,7 +71,7 @@ public class Statistics
         double total = 0;
         for (Activity a:activities) {
             if (a.getAthlete().equals(athlete)) {
-                total += a.calculateCaloriesBurned();
+                total += a.getCaloriesBurned();
             }
         }
         return total;

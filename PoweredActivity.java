@@ -15,11 +15,11 @@ public class PoweredActivity extends Activity {
      * @param athlete The athlete who performed the activity
      * @param equipment The equipment used
      */
-    public PoweredActivity(java.time.LocalDate date, double distance, ModeOfTransport mode, Athlete athlete, Equipment equipment) {
-        super(date, distance, mode, athlete);
+    public PoweredActivity(java.time.LocalDate date, double distance, int duration, ModeOfTransport mode, Athlete athlete, Equipment equipment) {
+        super(date, distance, duration, mode, athlete);
         this.equipment = equipment;
     }
-
+ 
     public Equipment getEquipment() {
         return equipment;
     }
@@ -30,13 +30,6 @@ public class PoweredActivity extends Activity {
 
     @Override
     public String toString() {
-        return super.toString() + ", Equipment=" + (equipment != null ? equipment.getName() : "None");
-    }
-
-    @Override
-    public double calculateCaloriesBurned() {
-        // Assume powered activities burn fewer calories due to assistance
-        double baseCalories = super.calculateCaloriesBurned();
-        return baseCalories * 0.7; // Example: 70% of normal activity
+        return super.toString() + ", Equipment =" + (equipment != null ? equipment.getName() : "None");
     }
 }

@@ -10,7 +10,8 @@ import java.time.LocalDate;
 public class Activity {
     private LocalDate date;
     private double distance; // in kilometers
-    private ModeOfTransport modeOfTransportation;
+    private int duration; // in minutes
+    private ModeOfTransport mode;
     private Athlete athlete;
 
     /**
@@ -21,13 +22,14 @@ public class Activity {
      * @param modeOfTransportation The mode used (e.g., walking, running)
      * @param athlete The athlete who performed the activity
      */
-    public Activity(LocalDate date, double distance, ModeOfTransport modeOfTransportation, Athlete athlete) {
+    public Activity(LocalDate date, double distance, int duration, ModeOfTransport mode, Athlete athlete) {
         if (distance < 0) {
             throw new IllegalArgumentException("Distance cannot be negative.");
         }
-        this.date = date;
+        this.date = LocalDate.now();
         this.distance = distance;
-        this.modeOfTransportation = modeOfTransportation;
+        this.duration = duration;
+        this.mode = mode;
         this.athlete = athlete;
     }
 
@@ -39,15 +41,20 @@ public class Activity {
     public double getDistance() {
         return distance;
     }
+    
+    public int getDuration()
+    {
+        return duration;
+    }
 
-    public ModeOfTransport getModeOfTransportation() {
-        return modeOfTransportation;
+    public ModeOfTransport getMode() {
+        return mode;
     }
 
     public Athlete getAthlete() {
         return athlete;
     }
-
+    
     // Setters
     public void setDate(LocalDate date) {
         this.date = date;
@@ -61,7 +68,7 @@ public class Activity {
     }
 
     public void setModeOfTransportation(ModeOfTransport mode) {
-        this.modeOfTransportation = mode;
+        this.mode = mode;
     }
 
     public void setAthlete(Athlete athlete) {
@@ -69,12 +76,12 @@ public class Activity {
     }
 
     /**
-     * Estimates calories burned based on distance and a fixed multiplier.
-     * For example, assume 60 calories/km for running.
+     * Calculate the calories burned, MET = intensity from 1-10
      */
-    public double calculateCaloriesBurned() {
-        double caloriesPerKm = 60.0; // default estimation
-        return distance * caloriesPerKm;
+    public double getCaloriesBurned()
+    {
+        double met = mode.getMET();
+        return (met * 3.5 * athlete.getWeight() / 200) * duration;
     }
 
     @Override
@@ -82,7 +89,7 @@ public class Activity {
         return "Activity{" +
                 "date=" + date +
                 ", distance=" + distance + " km" +
-                ", mode=" + modeOfTransportation +
+                ", mode=" + mode +
                 ", athlete=" + (athlete != null ? athlete.getName() : "N/A") +
                 '}';
     }
