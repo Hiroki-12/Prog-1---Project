@@ -44,6 +44,11 @@ public class Main
         }
         scanner.close();
     }
+    
+    private static void waitForEnter(Scanner scanner) {
+        System.out.println("\nPress Enter to return to the menu...");
+        scanner.nextLine();
+    }
 
     private static void showListOptions(Scanner scanner) {
         System.out.println("\n[1] List all activities");
@@ -53,8 +58,8 @@ public class Main
         System.out.print("Choose an option: ");
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
-            case 1 -> listAllActivities();
-            case 2 -> listAllAthletes();
+            case 1 -> listAllActivities(scanner);
+            case 2 -> listAllAthletes(scanner);
             case 3 -> listActivitiesByAthlete(scanner);
             case 4 -> listActivitiesByMode(scanner);
             default -> System.out.println("Invalid choice.");
@@ -87,10 +92,12 @@ public class Main
         }
     }
 
-    private static void listAllActivities() {
+    private static void listAllActivities(Scanner scanner) {
         for (Activity a : activities) {
             System.out.println(a);
         }
+        
+        waitForEnter(scanner);
     }
 
     private static void listActivitiesByAthlete(Scanner scanner) {
@@ -104,6 +111,8 @@ public class Main
         for (Activity a : athlete.getActivities()) {
             System.out.println(a);
         }
+        
+        waitForEnter(scanner);
     }
 
     private static void listActivitiesByMode(Scanner scanner) {
@@ -114,12 +123,15 @@ public class Main
                 System.out.println(a);
             }
         }
+        waitForEnter(scanner);
     }
 
-    private static void listAllAthletes() {
+    private static void listAllAthletes(Scanner scanner) {
         for (Athlete a : athletes) {
             System.out.println(a);
         }
+        
+        waitForEnter(scanner);
     }
     
     private static void createAthlete(Scanner scanner) {
@@ -169,6 +181,7 @@ public class Main
             total += a.getTotalDistance();
         }
         System.out.println("\nTotal distance by all athletes: " + total + " km");
+        waitForEnter(scanner);
     }
     
     private static void showDistanceByAthlete(Scanner scanner) {
@@ -179,6 +192,7 @@ public class Main
         int index = Integer.parseInt(scanner.nextLine());
         Athlete athlete = athletes.get(index);
         System.out.println("Total distance: " + athlete.getTotalDistance() + " km");
+        waitForEnter(scanner);
     }
 
     private static void showCaloriesByAthlete(Scanner scanner) {
@@ -189,5 +203,6 @@ public class Main
         int index = Integer.parseInt(scanner.nextLine());
         Athlete athlete = athletes.get(index);
         System.out.println("Total calories burned: " + athlete.getTotalCaloriesBurned());
+        waitForEnter(scanner);
     }
 }
