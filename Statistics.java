@@ -24,22 +24,6 @@ import java.util.ArrayList;
  */
 public class Statistics
 {
-    public static double totalDistance(ArrayList<Activity> activities) {
-        return activities.stream().mapToDouble(Activity::getDistance).sum();
-    }
-
-    public static double totalCalories(ArrayList<Activity> activities) {
-        return activities.stream().mapToDouble(Activity::getCaloriesBurned).sum();
-    }
-
-    public static double distanceByAthlete(Athlete athlete) {
-        return athlete.getTotalDistance();
-    }
-
-    public static double caloriesByAthlete(Athlete athlete) {
-        return athlete.getTotalCaloriesBurned();
-    }
-    
     /**
      * An example of a method - replace this comment with your own
      *
