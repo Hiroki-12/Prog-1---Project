@@ -3,26 +3,33 @@
  */
 public class Equipment {
     private String name;
-    private double weight; // in kg
+    private String type;
+    private String brand;
 
     /**
      * Constructor for Equipment.
      */
-    public Equipment(String name, double weight) {
+    public Equipment(String name, String brand, String type) {
         this.name = name;
-        this.weight = weight;
+        this.brand = brand;
+        this.type = type;
     }
 
     public String getName() {
         return name;
     }
     
-    public double getWeight() {
-        return weight;
+    public String getType() {
+        return type;
+    }
+    
+    public String getBrand()
+    {
+        return brand;
     }
 
     @Override
     public String toString() {
-        return name + " (" + weight + " kg)";
+        return name + " (" + brand + ", " + type + ")";
     }
 }

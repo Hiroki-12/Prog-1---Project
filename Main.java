@@ -11,7 +11,8 @@ public class Main
 {
     private static ArrayList<Activity> activities = new ArrayList<>();
     private static ArrayList <Athlete> athletes = new ArrayList<>();
-
+    private static ArrayList<Equipment> equipmentList = new ArrayList<>();
+    
     /**
      * An example of a method - replace this comment with your own
      *
@@ -69,11 +70,13 @@ public class Main
     private static void showCreateOptions(Scanner scanner) {
         System.out.println("\n[1] Create a new athlete");
         System.out.println("[2] Create a new activity");
+        System.out.println("[3] Create new equipment");
         System.out.print("Choose an option: ");
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1 -> createAthlete(scanner);
             case 2 -> createActivity(scanner);
+            case 3 -> createEquipment(scanner);
             default -> System.out.println("Invalid choice.");
         }
     }
@@ -167,11 +170,39 @@ public class Main
         int duration = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter mode of transport (WALKING, RUNNING, BIKING, SWIMMING): ");
         ModeOfTransport mode = ModeOfTransport.valueOf(scanner.nextLine().toUpperCase());
-
+        
         Activity activity = new Activity(date, distance, duration, mode, athlete);
         activities.add(activity);
         athlete.addActivity(activity);
         System.out.println("Activity created!");
+    }
+    
+    private static void createEquipment(Scanner scanner) {
+        if (!equipmentList.isEmpty()) {
+            System.out.println("Select existing equipment or enter -1 to add new:");
+            for (int i = 0; i < equipmentList.size(); i++) {
+                System.out.println("[" + i + "] " + equipmentList.get(i));
+            }
+            int choice = Integer.parseInt(scanner.nextLine());
+            if (choice >= 0 && choice < equipmentList.size()) {
+                System.out.println("Using existing equipment: " + equipmentList.get(choice));
+                waitForEnter(scanner);
+                return;
+            }
+        }
+
+        System.out.print("Enter equipment name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter equipment brand: ");
+        String type = scanner.nextLine();
+        System.out.print("Enter equipment type: ");
+        String brand = scanner.nextLine();
+        
+
+        Equipment equipment = new Equipment(name, brand, type);
+        equipmentList.add(equipment);
+        System.out.println("Equipment created: " + equipment);
+        waitForEnter(scanner);
     }
     
     private static void showTotalDistance(Scanner scanner)

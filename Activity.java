@@ -8,11 +8,11 @@ import java.time.LocalDate;
  * @author 
  */
 public class Activity {
-    private LocalDate date;
-    private double distance; // in kilometers
-    private int duration; // in minutes
-    private ModeOfTransport mode;
-    private Athlete athlete;
+    protected LocalDate date;
+    protected double distance; // in kilometers
+    protected int duration; // in minutes
+    protected ModeOfTransport mode;
+    protected Athlete athlete;
 
     /**
      * Constructor to initialize an Activity.
@@ -26,13 +26,20 @@ public class Activity {
         if (distance < 0) {
             throw new IllegalArgumentException("Distance cannot be negative.");
         }
-        this.date = LocalDate.now();
+        this.date = date;
         this.distance = distance;
         this.duration = duration;
         this.mode = mode;
         this.athlete = athlete;
     }
 
+    public Activity(double distance, int duration, ModeOfTransport mode, Athlete athlete) {
+        this.distance = distance;
+        this.duration = duration;
+        this.mode = mode;
+        this.date = LocalDate.now();
+        this.athlete = athlete;
+    }
     // Getters
     public LocalDate getDate() {
         return date;
@@ -86,11 +93,6 @@ public class Activity {
 
     @Override
     public String toString() {
-        return "Activity{" +
-                "date=" + date +
-                ", distance=" + distance + " km" +
-                ", mode=" + mode +
-                ", athlete=" + (athlete != null ? athlete.getName() : "N/A") +
-                '}';
+        return date + " - " + mode + " - " + distance + "km in " + duration + "min by " + athlete.getName();
     }
 }

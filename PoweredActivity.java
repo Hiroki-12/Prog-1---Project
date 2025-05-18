@@ -15,21 +15,19 @@ public class PoweredActivity extends Activity {
      * @param athlete The athlete who performed the activity
      * @param equipment The equipment used
      */
-    public PoweredActivity(java.time.LocalDate date, double distance, int duration, ModeOfTransport mode, Athlete athlete, Equipment equipment) {
-        super(date, distance, duration, mode, athlete);
+
+    public PoweredActivity(double distance, int duration, ModeOfTransport mode, Athlete athlete, Equipment equipment) {
+        super(distance, duration, mode, athlete);
         this.equipment = equipment;
     }
- 
+
     public Equipment getEquipment() {
         return equipment;
     }
 
-    public void setEquipment(Equipment equipment) {
-        this.equipment = equipment;
-    }
-
     @Override
     public String toString() {
-        return super.toString() + ", Equipment =" + (equipment != null ? equipment.getName() : "None");
+        return super.toString() + " using equipment: " + equipment.getName() + " (" + equipment.getBrand() + ", " + equipment.getType() + ")";
     }
 }
+
