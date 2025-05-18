@@ -6,11 +6,11 @@ import java.util.ArrayList;
  * 
  */
 public class Athlete {
-    private String name;
-    private int YOB;
-    private Gender gender;
-    private double weight; // in kg
-    private ArrayList<Activity> activities;
+    public String name;
+    public int YOB;
+    public Gender gender;
+    public double weight; // in kg
+    public ArrayList<Activity> activities;
 
     /**
      * Constructs an Athlete with all attributes.

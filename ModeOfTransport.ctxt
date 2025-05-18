@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=ModeOfTransport
-comment0.text=\r\n\ Represents\ available\ modes\ of\ transportation\ for\ activities.\r\n\ Some\ modes\ are\ considered\ "powered"\ (e.g.,\ biking)\ and\ others\ are\ regular\ (e.g.,\ walking).\r\n
-comment1.params=
-comment1.target=boolean\ isPowered()
-comment1.text=\r\n\ Determines\ if\ the\ mode\ of\ transport\ requires\ equipment.\r\n\ @return\ true\ if\ it's\ a\ powered\ activity.\r\n
-numComments=2
+comment1.params=MET
+comment1.target=ModeOfTransport(double)
+comment2.params=
+comment2.target=double\ getMET()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
