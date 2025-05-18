@@ -20,3 +20,8 @@ You can calculate the total distance traveled for a specific activity or across 
 The app alloes you to calculate the total distance traveled for a specific activity or for all  activities logged
 You also have an option to calculate the total number of calories burned, based on the MET score selected for each activity
 This way, you can track progress, stay motivated, and share achievements with others.
+
+HOW TO RUN THE APP OUTSIDE BLUEJ
+Open the command prompt and change the directory to where your BlueJ project is saved : cd C:\Users\...\...\BlueJProject\src
+Compile your .java files using javac : javac *.java
+Run the main class of your project
